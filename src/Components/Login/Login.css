@@ -1,0 +1,104 @@
+.btn .login{
+    position: absolute;
+    left: calc( 50vw - 15rem );
+    top: -60rem;
+    background-color: white;
+    width: 30rem;
+    /* height: 20rem; */
+    border: 1px solid black;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .2ms;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.427);
+    /* filter: blur(5px); */
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px ;
+    overflow: hidden;
+}
+.btn .login .cross{
+    padding: .5rem 1rem;
+    font-size: 1.5rem;
+    background-color: #f9b922;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.btn .login form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.input-text {
+    width: 70%;
+    position: relative;
+    border-bottom: 2px solid black;
+    margin: 2rem;
+    /* border-bottom: 1px solid black; */
+}
+.input-text label {
+    position: absolute;
+    left: 10px;
+    top: -1.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.input-text input{
+    /* position: relative; */
+    border: none;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.477);
+}
+
+.input-text input:focus,
+.input-text input:valid{
+    border: none;
+}
+.forgot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.forgot a{
+    padding: 0 0 0 10px ;
+}
+.login button {
+    width: 70%;
+    height: 2rem;
+    background-color: #f9b922;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 400;
+    border: none;
+
+}
+.login .signup {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 1rem 0 3rem 0;
+}
+
+.user{
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+}
+
+.user .profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+.user .profile i{
+    border: 2px solid black;
+    padding: .6rem;
+    margin: .5rem;
+    border-radius: 50%;
+}

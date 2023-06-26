@@ -1,0 +1,27 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f9b922;
+    /* color: white; */
+}
+
+nav .logo a{
+    display: flex;
+    align-items: center;
+    margin: .8rem;
+}
+nav .logo a img {
+    height: 3rem;
+}
+nav .page ul {
+    display: flex;
+}
+nav .page ul a{
+    text-decoration: none;
+}
+nav .page ul li{
+    list-style: none;
+    padding: 0rem 1rem;
+    
+}

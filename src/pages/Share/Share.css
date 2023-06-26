@@ -1,0 +1,28 @@
+.share-form form fieldset{
+    /* background-color: #f9b922; */
+    /* border: 2px solid #f9b922; */
+    padding: 4rem 0rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.share-form form fieldset .input-text{
+    margin: 1rem 10rem 2rem 10rem;
+    /* border-bottom: 1px black; */
+}
+.share-form form fieldset .input-select{
+    padding:  0rem 10rem 2rem 10rem;
+    font-size: 1.3rem;
+}
+.share-form form fieldset .input-select option{
+    font-size: 1.2rem;
+}
+.share-form form fieldset button{
+    margin: 2rem 10rem;
+    background-color: #f9b922;
+    border: none;
+    height: 3rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: white;
+}
