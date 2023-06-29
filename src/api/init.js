@@ -10,17 +10,19 @@ import { getAnalytics } from "firebase/analytics";
 
 export function init() {
     const firebaseConfig = {
-        apiKey: process.env.apiKey,
-        authDomain: process.env.authDomain,
-        projectId: process.env.projectId,
-        storageBucket: process.env.storageBucket,
-        messagingSenderId: process.env.messagingSenderId,
-        appId: process.env.appId,
-        measurementId: process.env.measurementId
-      };
-      
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-      return {app, analytics};
+        apiKey: "AIzaSyCTD_-gzijcmzD5vIhb7_XBfjwzOlkHO9o",
+        authDomain: "wego-af74f.firebaseapp.com",
+        projectId: "wego-af74f",
+        storageBucket: "wego-af74f.appspot.com",
+        messagingSenderId: "943499970684",
+        appId: "1:943499970684:web:b14ea293c4b85b1cb621f9",
+        measurementId: "G-G7S37KGVD3"
+    };
+
+    console.log(firebaseConfig);
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    return { app, analytics };
 }

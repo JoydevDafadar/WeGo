@@ -27,7 +27,7 @@ const Login = () => {
     e.preventDefault();
     if (signuppass === signupconfirmpass) {
       try {
-        await signUp(signupemail, signuppass);
+        const userCredential = await signUp(signupemail, signuppass);
         setSignup(false);
         setisSignin("true");
         localStorage.setItem('useron', 'true');

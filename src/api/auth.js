@@ -3,7 +3,7 @@ import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, si
 
 export async function signin(email, pass) {
     const auth = getAuth();
-    const userCredential = signInWithEmailAndPassword(auth, email, pass);
+    const userCredential = await signInWithEmailAndPassword(auth, email, pass);
     localStorage.setItem('user', userCredential.user.email);
     localStorage.setItem('useron', 'true');
     return userCredential;
@@ -17,5 +17,5 @@ export async function signout() {
 
 export async function signUp(email, pass) {
     const auth = getAuth();
-    await createUserWithEmailAndPassword(auth, signupemail, signuppass);
+    return await createUserWithEmailAndPassword(auth, email, pass);
 }
