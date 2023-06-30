@@ -1,12 +1,15 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+import { init } from './api/init';
+
 import Home from './pages/Home/Home'
 import Book from './pages/Book/Book';
 import Share from './pages/Share/Share';
 import About from './pages/About/About';
 
 function App() {
+  const {app, analytics} = init();
   return (
     <>
 
