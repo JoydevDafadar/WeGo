@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { init } from './api/init';
+import { init, initDB } from './api/init';
 
 import Home from './pages/Home/Home'
 import Book from './pages/Book/Book';
@@ -10,6 +10,8 @@ import About from './pages/About/About';
 
 function App() {
   const {app, analytics} = init();
+  const db = initDB();
+  window.app = app; window.db = db;
   return (
     <>
 

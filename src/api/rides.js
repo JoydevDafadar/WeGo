@@ -1,8 +1,5 @@
-import { getFirestore, collection, addDoc, getDocs, query, deleteDoc, onSnapshot } from 'firebase/firestore';
+import { collection, addDoc, getDocs, query, deleteDoc, onSnapshot } from 'firebase/firestore';
 
-export function init() {
-    return getFirestore();
-}
 
 export async function registerRide(db, username, rideSource, rideDestination, rideTime) {
     try {
