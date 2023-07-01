@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext,  useState } from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom';
+import { userContext } from '../../App';
 
 // import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "firebase/auth";
 import { signin, signout, signUp } from "../../api/auth";
 
 
 const Login = () => {
+
+  const {setAlert, setMsg} = useContext(userContext);
+
   const [login, setLogin] = useState(false);
   const [signup, setSignup] = useState(false);
 
@@ -16,6 +20,8 @@ const Login = () => {
   const [signupemail, setSignupemail] = useState('');
   const [signuppass, setSignuppass] = useState('');
   const [signupconfirmpass, setSignupconfirmpass] = useState('');
+
+  const[profilelist, setProfileList] = useState(false);
 
 
   const obj = {
@@ -33,11 +39,13 @@ const Login = () => {
         localStorage.setItem('useron', 'true');
         localStorage.setItem('user', userCredential.user.email);
       } catch (error) {
-        alert(error.message)
+        setMsg(error.message)
+        setAlert(true);
       }
     }
     else {
-      alert('Entered Password and Confirm Password does not matched.')
+      setMsg('Entered Password and Confirm Password does not matched.')
+      setAlert(true);
     }
 
   }
@@ -47,10 +55,12 @@ const Login = () => {
     try {
       await signin(signinemail, signinpass);
       setisSignin("true");
-      alert('signin Successfull');
+      setMsg('signin Successfull');
+      setAlert(true);
       setLogin(false);
     } catch (error) {
-      console.error(error);
+      setMsg(error.message);
+      setAlert(true);
     }
 
   }
@@ -60,17 +70,15 @@ const Login = () => {
     try {
       await signout();
       setisSignin("false");
-      alert('Signout Successfull');
+      setMsg('Signout Successfull');
+      setAlert(true);
     } catch (error) {
-      alert(error.message);
+      setMsg(error.message);
+      setAlert(true);
     }
   }
 
 
-
-  // useEffect(() => {
-
-  // },[])
   const [isSignin, setisSignin] = useState(localStorage.getItem('useron'))
 
 
@@ -173,11 +181,19 @@ const Login = () => {
     (
       <>
         <div className="user">
-          <div className="profile">
+          <div className="profile" onClick={() => {
+            if(profilelist){
+              setProfileList(false);
+            }
+            else{ setProfileList(true);}
+          }}>
             <i className="fa-solid fa-user"></i>
-            <p>{localStorage.getItem('user')}</p>
           </div>
-          <button onClick={logoutsubmit}>Logout</button>
+          <div className="profile-list" style={profilelist===false? {right : "-500px"}:{}}>
+              <div className='items'><i className="fa-solid fa-user"></i>{localStorage.getItem('user')}</div>
+              <Link to="/confirmation"><div className="items"><i className="fa-solid fa-car"></i>Your Confirmation</div></Link>
+              <div onClick={logoutsubmit} className='items'><i className="fa-solid fa-right-from-bracket"></i>Logout</div>
+          </div>
         </div>
       </>
     )
