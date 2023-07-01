@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { init } from './api/init';
+import { init, initDB } from './api/init';
 
 import Home from './pages/Home/Home'
 import Book from './pages/Book/Book';
@@ -13,6 +13,7 @@ const userContext = createContext();
 
 function App() {
   const {app, analytics} = init();
+// <<<<<<< HEAD
   const [alert, setAlert] = useState(true);
   const [msg, setMsg] = useState("Welcome to WeGo .. ");
 
@@ -24,6 +25,10 @@ function App() {
   },[alert]);
 
 
+// =======
+  const db = initDB();
+  window.app = app; window.db = db;
+// >>>>>>> c25e095d4ac9bc19f1b5569c780c65e20a293e55
   return (
     <>
     <userContext.Provider value={{setAlert, setMsg}}>
