@@ -3,10 +3,14 @@ import { collection, addDoc, getDocs, query, deleteDoc, onSnapshot } from 'fireb
 
 export async function registerRide(db, username, rideSource, rideDestination, rideTime) {
     try {
-        const ref = await addDoc(collection(db, 'rides', rideSource, rideDestination), {
+        const ref = await addDoc(collection(db, 'rides', rideSource, rideDestination, driverName, phoneNo, availableSeat, perPrice, isCar), {
             time: rideTime,
             registeredAt: Date.now(),
-            registeredBy: username
+            registeredBy: driverName,
+            phone: phoneNo,
+            availableSeat: availableSeat,
+            pricePerSeat: perPrice,
+            isCar: isCar
         })
 
         console.log(`Ride successfully registered in ${ref.id}`);
