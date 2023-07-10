@@ -35,6 +35,8 @@ const Login = () => {
       try {
         const userCredential = await signUp(signupemail, signuppass);
         setSignup(false);
+        setMsg('signUp Successfull');
+        setAlert(true);
         setisSignin("true");
         localStorage.setItem('useron', 'true');
         localStorage.setItem('user', userCredential.user.email);
@@ -191,6 +193,10 @@ const Login = () => {
           </div>
           <div className="profile-list" style={profilelist===false? {right : "-500px"}:{}}>
               <div className='items'><i className="fa-solid fa-user"></i>{localStorage.getItem('user')}</div>
+              <div className="extra items"><Link to='/'>Home</Link></div>
+              <div className="extra items"><Link to='/Book'>Book</Link></div>
+              <div className="extra items"><Link to='/Share'>Share</Link></div>
+              <div className="extra items"><Link to='/About'>About Us</Link></div>
               <Link to="/confirmation"><div className="items"><i className="fa-solid fa-car"></i>Your Confirmation</div></Link>
               <div onClick={logoutsubmit} className='items'><i className="fa-solid fa-right-from-bracket"></i>Logout</div>
           </div>

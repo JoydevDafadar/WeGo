@@ -1,0 +1,31 @@
+
+
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .about-section {
+    background-color: #f4f4f4;
+    padding: 40px 20px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-section h1,
+  .about-section h2 {
+    color: #333;
+  }
+  
+  .about-section p {
+    line-height: 1.5;
+  }
+  
+  .about-section ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }

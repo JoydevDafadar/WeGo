@@ -1,3 +1,16 @@
+.btn button{
+
+    height: 2rem;
+    width:6rem;
+    margin: 0rem .5rem;
+    border-radius: 20px;
+    border: none;
+    transition: .2s;
+
+}
+.btn button:hover{
+    background-color: rgba(216, 215, 215, 0.84);
+}
 .btn .login{
     position: absolute;
     left: calc( 50vw - 15rem );

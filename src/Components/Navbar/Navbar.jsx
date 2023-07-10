@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'
 
 import Login from '../Login/Login'
@@ -7,6 +7,8 @@ import Login from '../Login/Login'
 
 
 const Navbar = () => {
+
+    const location = useLocation();
 
 
   return (
@@ -20,10 +22,10 @@ const Navbar = () => {
         </div>
         <div className='page'>
             <ul>
-                <Link to='/'><li>Home</li></Link>
-                <Link to='/Book'><li>Book</li></Link>
-                <Link to='/Share'><li>Share</li></Link>
-                <Link to='/About'><li>About Us</li></Link>
+                <Link to='/'><li className={location.pathname === "/" ? "active" : ""}>Home</li></Link>
+                <Link to='/Book'><li className={location.pathname === "/Book" ? "active" : ""}>Book</li></Link>
+                <Link to='/Share'><li className={location.pathname === "/Share" ? "active" : ""}>Share</li></Link>
+                <Link to='/About'><li className={location.pathname === "/About" ? "active" : ""}>About Us</li></Link>
             </ul>
         </div>
         <Login/>

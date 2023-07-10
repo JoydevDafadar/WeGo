@@ -3,6 +3,7 @@ import './Home.css'
 import { Link } from 'react-router-dom'
 
 import Navbar from '../../Components/Navbar/Navbar'
+import Footer from '../Footer/Footer'
 
 const Home = () => {
   return (
@@ -40,6 +41,8 @@ const Home = () => {
       </div>
       </Link>
     </section>
+
+    <Footer/>
 
     </>
   )

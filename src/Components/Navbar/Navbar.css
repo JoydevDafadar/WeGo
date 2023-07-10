@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caprasimo&display=swap');
+
 nav {
     display: flex;
     align-items: center;
@@ -5,14 +7,22 @@ nav {
     background-color: #f9b922;
     /* color: white; */
 }
-
+nav .logo a p{
+    font-family: 'Caprasimo', cursive;
+    font-size: 1.5rem;
+    color: white;
+    margin: 0rem 0rem 0rem 1rem;
+}
 nav .logo a{
+    text-decoration: none;
+    color: black;
     display: flex;
     align-items: center;
     margin: .8rem;
 }
 nav .logo a img {
     height: 3rem;
+    width: 2.5rem;
 }
 nav .page ul {
     display: flex;
@@ -23,5 +33,39 @@ nav .page ul a{
 nav .page ul li{
     list-style: none;
     padding: 0rem 1rem;
+    font-weight: 500;
+    color: black;
+    transition: .2s;
+    position: relative;
     
 }
+nav .page ul li:hover,
+nav .page ul  li.active{
+    color: white;
+}
+nav .page ul li:hover::after,
+nav .page ul  li.active::after{
+    content: "";
+    height: 2px;
+    width: 30%;
+    background: white;
+    position: absolute;
+    bottom: -6px;
+    left: 17px;
+}
+
+
+@media only screen and ( max-width:850px ) {
+    .page{
+        display: none;
+    }
+}
+
+
+
+@media  only screen and ( max-width:500px) {
+    
+}
+
+
+
